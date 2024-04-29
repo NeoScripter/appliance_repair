@@ -1,0 +1,108 @@
+:root{
+    --white: rgb(254, 254, 254);
+    --bright-orange: rgba(255, 153, 0, 1);
+    --pale-orange: rgba(255, 193, 99, 1);
+    --dark-grey: rgba(177, 177, 177, 1);
+    --pale-grey: rgba(241, 241, 241, 1);
+    --dark-blue: rgba(8, 52, 117, 1);
+    --pale-blue: rgba(224, 233, 240, 1);
+    --text-color: rgba(51, 51, 51, 1);
+    --green: rgba(61, 183, 59, 1);
+    --red: rgba(173, 8, 8, 1);
+
+    --fs-900: 64px;
+    --fs-800: 32px;
+    --fs-700: 24px;
+    --fs-600: 18px;
+    --fs-500: 16px;
+}
+
+@font-face {
+    font-family: 'Actay Regular';
+    src: url(assets/fonts/Actay-Regular.otf);
+}
+
+@font-face {
+    font-family: 'Actay Bold';
+    src: url(assets/fonts/ActayWide-Bold.otf);
+}
+
+body {
+    font-family: 'Actay Regular';
+    display: flex;
+    justify-content: center;
+    color: var(--text-color);
+}
+
+.wrapper {
+    width: min(1612px, 100%);
+    min-height: 100vh;
+}
+
+/* Navigation */
+
+.nav {
+    display: flex;
+    gap: 80px;
+}
+
+.logo-wrapper {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.logo {
+    width: 64px;
+}
+
+.logo-title {
+    font-weight: 700;
+    font-size: var(--fs-500);
+    color: var(--dark-blue);
+    font-family: 'Actay Bold';
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.nav-list-item {
+    list-style: none;
+
+}
+
+.nav-list-item a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: var(--fs-600);
+}
+
+.nav-list-item a:hover, .nav-list-item a:focus {
+    color: var(--dark-blue);
+}
+
+.nav-list-item a:active {
+    color: var(--bright-orange);
+}
+
+.social-links {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    margin-left: auto;
+}
+
+.social-link {
+    font-size: var(--fs-600);
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.icon-social {
+    width: 60px;
+}
