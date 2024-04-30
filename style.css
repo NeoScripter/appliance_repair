@@ -125,6 +125,8 @@ body {
     display: block;
 }
 
+/* Pop-up menu */
+
 .pop-up-menu {
     position: absolute;
     top: 0;
@@ -176,6 +178,10 @@ body {
 
 
 .pop-up-btn {
+    margin-bottom: 8px;
+}
+
+.repair-request {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -187,11 +193,10 @@ body {
     width: 240px;
     border-radius: 10px;
     cursor: pointer;
-    margin-bottom: 8px;
     background-color: var(--white);
 }
 
-.pop-up-btn:hover, .pop-up-btn:focus {
+.repair-request:hover, .repair-request:focus {
     color: var(--white);
     background-color: var(--bright-orange);
 }
@@ -212,7 +217,95 @@ body {
     display: none;
 }
 
+/* Banner */
 
+.banner {
+    height: 660px;
+    position: relative;
+    margin-block: 46px 40px;
+}
+
+.banner-title {
+    position: absolute;
+    top: 105px;
+    left: 0;
+}
+
+.banner-h1 {
+    color: var(--dark-blue);
+    font-family: 'Actay Bold';
+    font-size: var(--fs-900);
+    width: 592px;
+    line-height: 76.8px;
+}
+
+.orange {
+    color: var(--bright-orange);
+}
+
+.banner-title-prg {
+    font-size: var(--fs-700);
+    width: 551px;
+}
+
+.banner-pop-up {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.bnr-pop-up-prg {
+    font-size: var(--fs-600);
+    margin-bottom: 24px;
+}
+
+.banner-img {
+    height: 507px;
+    width: 733px;
+    position: absolute;
+    top: 56px;
+    right: 94px;
+}
+
+.banner-flex-group {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    width: 920px;
+    gap: 18px;
+}
+
+.banner-desc {
+    background-color: var(--dark-blue);
+    border-radius: 10px;
+    padding: 22px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--white);
+    width: min(450px, 50%);
+}
+
+.desc-large {
+    font-family: 'Actay Bold';
+    font-size: var(--fs-800);
+    font-weight: 700;
+}
+
+.desc-small {
+    font-size: var(--fs-700);
+}
+
+@media screen and (max-width: 1440px) {
+    .banner-title {
+        top: 0;
+    }
+    .banner-flex-group {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+}
 
 @media screen and (max-width: 1200px) {
     .nav-list.desktop {

@@ -43,11 +43,14 @@ openBurgerMenu.addEventListener('click', () => {
 });
 
 // Pop-up menu form buttons
-const requestBtn = document.querySelector('.pop-up-btn.request');
-const plusIcon = document.querySelector('.plus-sign-btn');
-requestBtn.addEventListener('mouseover', () => {
-    plusIcon.src = "assets/svgs/+white.svg";
-    requestBtn.addEventListener('mouseout', () => {
-        plusIcon.src = "assets/svgs/+orange.svg";
+const requestBtns = document.querySelectorAll('.repair-request.request');
+requestBtns.forEach((button) => {
+    const plusIcon = button.querySelector('.plus-sign-btn');
+    button.addEventListener('mouseover', () => {
+        plusIcon.src = "assets/svgs/+white.svg";
+        button.addEventListener('mouseout', () => {
+            plusIcon.src = "assets/svgs/+orange.svg";
+        });
     });
 });
+
