@@ -32,6 +32,7 @@ body {
     display: flex;
     justify-content: center;
     color: var(--text-color);
+    overflow-x: hidden;
 }
 
 .wrapper {
@@ -117,16 +118,41 @@ body {
     cursor: pointer;
 }
 
+.burger-menu.open {
+    margin-left: auto;
+    width: 32px;
+    align-self: flex-start;
+    display: block;
+}
+
 .pop-up-menu {
     position: absolute;
-    right: 0;
     top: 0;
     width: min(390px, 100%);
-    padding: 12px;
+    padding: 24px;
     background-color: var(--white);
+    display: grid;
+    align-content: start;
+    grid-template-rows: 420px 1fr;
+    gap: 24px;
+    height: max(100vh, 740px);
+    z-index: 5;
+    right: -100%;
+    transition: all 0.8s ease;
+}
+
+.pop-up-menu.active {
+    right: 0;
+}
+
+.pop-up-top {
     display: flex;
     flex-direction: column;
     gap: 24px;
+}
+
+.pop-up-bottom {
+    align-self: end;
 }
 
 .nav-list.mobile {
@@ -145,31 +171,64 @@ body {
 
 .pop-up-prg {
     font-size: var(--fs-500);
+    margin-bottom: 24px;
 }
+
 
 .pop-up-btn {
     display: flex;
     align-items: center;
     justify-content: center;
     border: 2px solid var(--bright-orange);
+    color: var(--bright-orange);
     padding: 16px;
     font-size: var(--fs-600);
+    gap: 16px;
+    width: 240px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 8px;
+    background-color: var(--white);
+}
+
+.pop-up-btn:hover, .pop-up-btn:focus {
+    color: var(--white);
+    background-color: var(--bright-orange);
 }
 
 .plus-sign-btn {
     width: 24px;
-    padding-right: 16px;
-    flex-shrink: 0;
+    box-sizing: content-box;
 }
 
-@media screen and (max-width: 1180px) {
-    .nav-list {
+.overlay {
+    background-color: rgb(0,0,0,0.8);
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index: 4;
+    margin: -12px;
+    overflow-y: auto;
+    display: none;
+}
+
+
+
+@media screen and (max-width: 1200px) {
+    .nav-list.desktop {
         display: none;
     }
     .social-links {
         margin-right: auto;
     }
-    .burger-menu {
+    .burger-menu.closed {
         display: block;
+        margin-left: auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .social-links.desktop {
+        display: none;
     }
 }

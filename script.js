@@ -25,15 +25,29 @@ addSocialLinksEventListeners(whatsappLinkPopUp, whatsappIconPopUp, 'whatsapp');
 addSocialLinksEventListeners(viberLinkPopUp, viberIconPopUp, 'viber');
 
 // Burger menu animation
-const burgerMenu = document.querySelector('.burger-menu');
-burgerMenu.addEventListener('click', () => {
-    if (burgerMenu.style.width === "56px") {
-        burgerMenu.style.width = "32px";
-        burgerMenu.style.alignSelf = "flex-start";
-        burgerMenu.src = "assets/svgs/burger-menu.open.svg";
-    } else {
-        burgerMenu.style.width = "56px";
-        burgerMenu.style.alignSelf = "center";
-        burgerMenu.src = "assets/svgs/burger-menu.close.svg";
-    }
+const popUpMenu = document.querySelector('.pop-up-menu');
+const overlay = document.querySelector('.overlay');
+const closedBurgerMenu = document.querySelector('.burger-menu.closed');
+const openBurgerMenu = document.querySelector('.burger-menu.open');
+closedBurgerMenu.addEventListener('click', () => {
+        overlay.style.display ='block';
+        setTimeout(() => {
+            popUpMenu.classList.add('active');
+        }, 50);
+});
+openBurgerMenu.addEventListener('click', () => {
+    popUpMenu.classList.remove('active');
+    setTimeout(() => {
+        overlay.style.display = 'none'
+    }, 50);
+});
+
+// Pop-up menu form buttons
+const requestBtn = document.querySelector('.pop-up-btn.request');
+const plusIcon = document.querySelector('.plus-sign-btn');
+requestBtn.addEventListener('mouseover', () => {
+    plusIcon.src = "assets/svgs/+white.svg";
+    requestBtn.addEventListener('mouseout', () => {
+        plusIcon.src = "assets/svgs/+orange.svg";
+    });
 });
