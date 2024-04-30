@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", function() {
 // Social links animaition
 const whatsappLink = document.querySelector('.social-link.whatsapp');
 const whatsappIcon = document.querySelector('.whatsapp .icon-social');
@@ -54,3 +55,27 @@ requestBtns.forEach((button) => {
     });
 });
 
+// Animated titles
+    const targets = document.querySelectorAll('.title-animated');
+
+    if (!('IntersectionObserver' in window)) {
+        target.classList.add('visible');
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            } else {
+                entry.target.classList.remove('visible');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    targets.forEach((target) => {
+        observer.observe(target);
+    });
+});

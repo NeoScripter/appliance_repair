@@ -34,6 +34,7 @@ body {
     justify-content: center;
     color: var(--text-color);
     overflow-x: hidden;
+    font-size: 16px;
 }
 
 .wrapper {
@@ -110,7 +111,7 @@ body {
 }
 
 .icon-social {
-    width: 60px;
+    width: 48px;
 }
 
 .burger-menu {
@@ -138,7 +139,7 @@ body {
     align-content: start;
     grid-template-rows: 420px 1fr;
     gap: 24px;
-    height: max(100vh, 740px);
+    height: max(90vh, 740px);
     z-index: 5;
     right: -100%;
     transition: all 0.8s ease;
@@ -221,7 +222,7 @@ body {
 /* Banner */
 
 .banner {
-    height: 660px;
+    height: 720px;
     position: relative;
     margin-block: 46px 40px;
 }
@@ -303,6 +304,36 @@ body {
     font-size: var(--fs-700);
 }
 
+/* @keyframes slideUpFadeIn {
+    0%, 50% {
+        opacity: 0;
+        transform: translateY(100px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+  }
+
+  .title-animated {
+    animation: slideUpFadeIn 1.5s ease-out forwards;
+  }
+ */
+
+ .title-animated {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+  
+  .title-animated.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+/* Equipment */
+
+
+
 @media screen and (max-width: 1440px) {
     .banner-title {
         top: 0;
@@ -361,5 +392,8 @@ body {
     .banner-h1 {
         font-size: var(--fs-850);
         line-height: 57.6px;
+    }
+    .banner-img {
+        margin-block: 48px;
     }
 }
