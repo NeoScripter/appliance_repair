@@ -204,7 +204,7 @@ body {
 }
 
 .plus-sign-btn {
-    width: 24px;
+    width: 18px;
     box-sizing: content-box;
 }
 
@@ -222,7 +222,7 @@ body {
 /* Banner */
 
 .banner {
-    height: 720px;
+    min-height: 720px;
     position: relative;
     margin-block: 46px 40px;
 }
@@ -304,35 +304,48 @@ body {
     font-size: var(--fs-700);
 }
 
-/* @keyframes slideUpFadeIn {
-    0%, 50% {
-        opacity: 0;
-        transform: translateY(100px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-  }
-
-  .title-animated {
-    animation: slideUpFadeIn 1.5s ease-out forwards;
-  }
- */
-
- .title-animated {
+.title-animated {
     opacity: 0;
     transform: translateY(100px);
     transition: opacity 1s ease-out, transform 1s ease-out;
-  }
-  
-  .title-animated.visible {
+}
+
+.title-animated.visible {
     opacity: 1;
     transform: translateY(0);
-  }
+}
+
 /* Equipment */
 
+.eq-title {
+    font-family: 'Actay Bold';
+    font-size: var(--fs-800);
+    color: var(--dark-blue);
+}
 
+.eq-grid-group {
+    padding-block: 24px;
+    display: grid;
+    column-gap: 40px;
+    row-gap: 24px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.eq-service-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 32px;
+    border: 1px solid rgba(177, 177, 177, 1);
+    border-radius: 10px;
+    background-color: var(--white);
+}
+
+.eq-service-item:hover, .eq-service-item:focus {
+    background-color: var(--pale-orange);
+}
 
 @media screen and (max-width: 1440px) {
     .banner-title {

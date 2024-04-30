@@ -1,0 +1,33 @@
+<svg width="153" height="160" viewBox="0 0 153 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="icon_microwave">
+<g id="Group 1000002273">
+<g id="Rectangle 57">
+<mask id="path-1-inside-1_6107_411" fill="white">
+<rect x="117.018" y="120.345" width="24.1379" height="6.89655" rx="0.862069"/>
+</mask>
+<rect x="117.018" y="120.345" width="24.1379" height="6.89655" rx="0.862069" fill="#F1F1F1" stroke="#B1B1B1" stroke-width="4" mask="url(#path-1-inside-1_6107_411)"/>
+</g>
+<g id="Rectangle 58">
+<mask id="path-2-inside-2_6107_411" fill="white">
+<rect x="10.9824" y="120.345" width="24.1379" height="6.89655" rx="0.862069"/>
+</mask>
+<rect x="10.9824" y="120.345" width="24.1379" height="6.89655" rx="0.862069" fill="#F1F1F1" stroke="#B1B1B1" stroke-width="4" mask="url(#path-2-inside-2_6107_411)"/>
+</g>
+<g id="Rectangle 56">
+<mask id="path-3-inside-3_6107_411" fill="white">
+<rect x="6.67285" y="115.034" width="138.793" height="6.89655" rx="0.862069"/>
+</mask>
+<rect x="6.67285" y="115.034" width="138.793" height="6.89655" rx="0.862069" fill="#F1F1F1" stroke="#B1B1B1" stroke-width="4" mask="url(#path-3-inside-3_6107_411)"/>
+</g>
+<rect id="Rectangle 55" x="2.5" y="34" width="148" height="83.3448" rx="2.44828" fill="#E0E9F0" stroke="#B1B1B1" stroke-width="2"/>
+<rect id="Rectangle 54" x="14.3193" y="44.9569" width="93.3276" height="62.2931" rx="2.69828" fill="white" stroke="#B1B1B1" stroke-width="1.5"/>
+<rect id="Rectangle 51" x="20.3535" y="49.2672" width="81.2586" height="53.6724" fill="white" stroke="#B1B1B1" stroke-width="1.5"/>
+<rect id="Rectangle 52" x="133.25" y="42.75" width="12.2931" height="25.2241" rx="0.974138" stroke="#B1B1B1" stroke-width="1.5"/>
+<rect id="Rectangle 53" x="115.181" y="46.681" width="5.39655" height="56.2586" rx="0.974138" stroke="#B1B1B1" stroke-width="1.5"/>
+<circle id="Ellipse 95" cx="139.81" cy="76.9655" r="3.81034" fill="#083475" stroke="#B1B1B1"/>
+<circle id="Ellipse 96" cx="139.81" cy="90.7587" r="3.81034" fill="#083475" stroke="#B1B1B1"/>
+<circle id="Ellipse 97" cx="139.81" cy="104.552" r="3.81034" fill="#083475" stroke="#B1B1B1"/>
+<path id="Vector 9" d="M127.5 33.431V117.914" stroke="#B1B1B1" stroke-width="2"/>
+</g>
+</g>
+</svg>
