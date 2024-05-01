@@ -505,12 +505,122 @@ section {
     align-items: center;
 }
 
-
 .flex-item-arrow img {
     object-fit: cover;
     min-width: 45px;
     height: 22px;
     object-position: right;
+}
+
+.stage-img-wrapper {
+    margin-block: 40px;
+}
+
+.stage-img-grid-group {
+    display: grid;
+    grid-template-columns: 1fr 1.7fr;
+    gap: 40px;
+    margin-left: auto;
+    max-width: 1140px;
+}
+
+.stage-img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Webform */
+
+.webform {
+    background-color: var(--pale-grey);
+    padding-block: 56px;
+    position: relative;
+    display: flex;
+    gap: 80px;
+    justify-content: space-between;
+}
+
+.webform-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -630px;
+    right: -630px;
+    background-color: var(--pale-grey);
+    z-index: -1;
+}
+
+.webform-top p {
+    margin-top: 24px;
+    font-size: var(--fs-600);
+    width: 468px;
+}
+
+.request-form {
+    min-height: 450px;
+    width: 920px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.request-form input {
+    padding: 20px 24px;
+    border-radius: 10px;
+    font-size: var(--fs-600);
+    color: var(--text-color);
+    border: 1px solid rgb(146, 139, 139);
+}
+
+.request-form input::placeholder {
+    color: rgb(146, 139, 139);
+}
+
+.gears-img {
+    width: 381px;
+    position: absolute;
+    bottom: 56px;
+    left: 0;
+    margin-inline: auto;
+}
+
+.hidden-label {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+textarea {
+    resize: none;
+    font-size: var(--fs-600);
+    color: rgb(146, 139, 139);
+    border: 1px solid rgb(175, 171, 171);
+    padding: 20px 24px;
+    border-radius: 10px;
+    min-height: 150px;
+}
+
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.repair-request.request.submit-btn {
+    width: 100%;
+    padding-block: 12px;
+}
+
+.policy-link {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--dark-blue);
+    letter-spacing: 0.06em;
 }
 
 @media screen and (max-width: 1440px) {
@@ -575,6 +685,21 @@ section {
     .about-desc-wrapper {
         width: 100%;
         margin-left: 0;
+    }
+    .stage-img-grid-group {
+        grid-template-columns: 1fr;
+    }
+    .webform {
+        flex-direction: column;
+    }
+    .gears-img {
+        position: static;
+    }
+    .request-form {
+        width: 100%;
+    }
+    .webform {
+        gap: 10px;
     }
 }
 
