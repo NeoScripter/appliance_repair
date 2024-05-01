@@ -47,13 +47,21 @@ openBurgerMenu.addEventListener('click', () => {
 const requestBtns = document.querySelectorAll('.repair-request.request');
 requestBtns.forEach((button) => {
     const plusIcon = button.querySelector('.plus-sign-btn');
+    
     button.addEventListener('mouseover', () => {
-        plusIcon.src = "assets/svgs/+white.svg";
-        button.addEventListener('mouseout', () => {
-            plusIcon.src = "assets/svgs/+orange.svg";
-        });
+        toggleIcon(plusIcon);
+    });
+
+    button.addEventListener('mouseout', () => {
+        toggleIcon(plusIcon);
     });
 });
+
+function toggleIcon(plusIcon) {
+    const isOrange = plusIcon.src.endsWith("/+orange.svg");
+    plusIcon.src = isOrange ? "assets/svgs/+white.svg" : "assets/svgs/+orange.svg";
+}
+
 
 // Animated titles
     const targets = document.querySelectorAll('.title-animated');

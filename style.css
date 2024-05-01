@@ -198,9 +198,19 @@ body {
     background-color: var(--white);
 }
 
+.pop-up-btn.repair-request {
+    color: var(--white);
+    background-color: var(--bright-orange);
+}
+
 .repair-request:hover, .repair-request:focus {
     color: var(--white);
     background-color: var(--bright-orange);
+}
+
+.pop-up-btn.repair-request:hover, .pop-up-btn.repair-request:focus {
+    color: var(--bright-orange);
+    background-color: var(--white);
 }
 
 .plus-sign-btn {
@@ -333,18 +343,36 @@ body {
 
 .eq-service-item {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-decoration: none;
     color: var(--text-color);
     padding: 32px;
+    gap: 32px;
     border: 1px solid rgba(177, 177, 177, 1);
     border-radius: 10px;
     background-color: var(--white);
 }
 
+.eq-service-item p {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: var(--fs-600);
+    letter-spacing: 0.08em;
+}
+
 .eq-service-item:hover, .eq-service-item:focus {
     background-color: var(--pale-orange);
+}
+
+.banner-bottom {
+    display: flex;
+    justify-content: center;
+}
+
+.banner-bottom a {
+    text-decoration: none;
 }
 
 @media screen and (max-width: 1440px) {
@@ -387,6 +415,9 @@ body {
     .banner-title-prg {
         width: 100%;
     }
+    .eq-grid-group {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -408,5 +439,8 @@ body {
     }
     .banner-img {
         margin-block: 48px;
+    }
+    .eq-grid-group {
+        grid-template-columns: 1fr;
     }
 }
