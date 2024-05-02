@@ -115,3 +115,25 @@ function toggleIcon(plusIcon) {
     });
 });
 
+// Arrow buttons hovering effect
+function toggleArrow(arrowBtn) {
+    const isNormal = arrowBtn.src.endsWith("normal.svg");
+
+    if (isNormal) {
+        arrowBtn.src = arrowBtn.src.replace("normal.svg", "hover.svg");
+    } else {
+        arrowBtn.src = arrowBtn.src.replace("hover.svg", "normal.svg");
+    }
+}
+
+const arrowBtns = document.querySelectorAll('.carousel-arrow');
+arrowBtns.forEach((button) => {
+    
+    button.addEventListener('mouseover', () => {
+        toggleArrow(button);
+    });
+
+    button.addEventListener('mouseout', () => {
+        toggleArrow(button);
+    });
+});

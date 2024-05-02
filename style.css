@@ -666,16 +666,22 @@ textarea::placeholder {
 
 /* Reviews */
 
+.reviews {
+    position: relative;
+}
+
 .reviews-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    margin-bottom: 24px;
 }
 
 .arrow-wrapper {
+    padding-top: 16px;
     display: flex;
-    align-items: center;
+    justify-content: center;
     gap: 24px;
+    position: absolute;
+    top: 24px;
+    right: 0;
 }
 
 .carousel-arrow {
@@ -684,7 +690,6 @@ textarea::placeholder {
 }
 
 .carousel-container {
-    position: relative;
     width: 100%;
 }
 
@@ -704,6 +709,7 @@ textarea::placeholder {
     padding: 24px;
     background-color: var(--pale-grey);
     border-radius: 10px;
+    flex: 0 0 380px;
 }
 
 .carousel-item h2 {
@@ -718,23 +724,6 @@ textarea::placeholder {
 
 .carousel-item > * {
     margin-bottom: 16px;
-}
-
-.prev-btn, .next-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #fff;
-    border: 1px solid #ccc;
-    cursor: pointer;
-}
-
-.prev-btn {
-    left: 10px;
-}
-
-.next-btn {
-    right: 10px;
 }
 
 @media screen and (max-width: 1440px) {
@@ -854,5 +843,15 @@ textarea::placeholder {
     }
     .flex-item-arrow img {
         width: 70vw;
+    }
+    .arrow-wrapper {
+        position: static;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .carousel-item {
+        width: 320px;
+        flex-basis: 320px;
     }
 }
