@@ -664,6 +664,79 @@ textarea::placeholder {
     letter-spacing: 0.06em;
 }
 
+/* Reviews */
+
+.reviews-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.arrow-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.carousel-arrow {
+    width: 32px;
+    cursor: pointer;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+}
+
+.carousel-viewport {
+    overflow: hidden; 
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 24px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.carousel-item {
+    width: 380px; 
+    padding: 24px;
+    background-color: var(--pale-grey);
+    border-radius: 10px;
+}
+
+.carousel-item h2 {
+    font-size: var(--fs-700);
+    text-transform: uppercase;
+    font-family: 'Actay Bold';
+}
+
+.carousel-item p {
+    font-size: var(--fs-600);
+}
+
+.carousel-item > * {
+    margin-bottom: 16px;
+}
+
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
 @media screen and (max-width: 1440px) {
     .banner-title {
         top: 0;

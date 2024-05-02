@@ -86,4 +86,32 @@ function toggleIcon(plusIcon) {
     targets.forEach((target) => {
         observer.observe(target);
     });
+
+    // Reviews carousel
+    const track = document.querySelector('.carousel-track');
+    const items = Array.from(track.children);
+    const nextButton = document.querySelector('.next-btn');
+    const prevButton = document.querySelector('.prev-btn');
+    const itemWidth = items[0].getBoundingClientRect().width;
+    let currentSlide = 0;
+
+    // Move the track
+    function moveTrack(position) {
+        track.style.transform = `translateX(-${position}px)`;
+    }
+
+    nextButton.addEventListener('click', () => {
+        if (currentSlide < items.length - 1) {
+            currentSlide++;
+            moveTrack(itemWidth * currentSlide);
+        }
+    });
+
+    prevButton.addEventListener('click', () => {
+        if (currentSlide > 0) {
+            currentSlide--;
+            moveTrack(itemWidth * currentSlide);
+        }
+    });
 });
+
