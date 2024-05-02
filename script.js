@@ -113,8 +113,8 @@ function toggleIcon(plusIcon) {
             moveTrack(itemWidth * currentSlide);
         }
     });
-});
 
+    
 // Arrow buttons hovering effect
 function toggleArrow(arrowBtn) {
     const isNormal = arrowBtn.src.endsWith("normal.svg");
@@ -136,4 +136,52 @@ arrowBtns.forEach((button) => {
     button.addEventListener('mouseout', () => {
         toggleArrow(button);
     });
+});
+
+const faqIcons = document.querySelectorAll('.faq-icon');
+faqIcons.forEach((button) => {
+    
+    button.addEventListener('mouseover', () => {
+        toggleArrow(button);
+    });
+
+    button.addEventListener('mouseout', () => {
+        toggleArrow(button);
+    });
+});
+
+// Code that makes the sections gradually appear and disappear
+
+const faqQuestions = document.querySelectorAll('.faq-question');
+
+faqQuestions.forEach((question) => {
+    const closestIcon = question.querySelector('.faq-icon');
+    closestIcon.addEventListener('click', () => {
+        const closestAnswer = question.closest('.faq-question').querySelector('.faq-answer');
+        if (getComputedStyle(closestAnswer).height === "0px") {
+            closestAnswer.style.display = 'block';
+            closestAnswer.style.marginTop = '24px';
+            const height = closestAnswer.scrollHeight + "px";
+
+            closestIcon.src = closestIcon.src.replace("hover.svg", "active.svg");
+            
+            closestAnswer.style.height = "0";
+            closestAnswer.style.opacity = "0";
+            requestAnimationFrame(() => {
+                closestAnswer.style.height = height;
+                closestAnswer.style.opacity = "1";
+            });
+        } else {
+            closestAnswer.style.height = "0";
+            closestAnswer.style.opacity = "0";
+            closestIcon.src = closestIcon.src.replace("active.svg", "hover.svg");
+            setTimeout(() => {
+                closestAnswer.style.marginTop = '0px';
+            }, 250);
+            setTimeout(() => {
+                closestAnswer.style.display = 'none';
+            }, 500);
+        }
+    });
+});
 });

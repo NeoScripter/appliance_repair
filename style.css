@@ -730,6 +730,44 @@ textarea::placeholder {
     margin-block: 40px;
 }
 
+.faq-question {
+    cursor: pointer;
+    padding: 32px;
+    margin-bottom: 24px;
+    background-color: var(--pale-grey);
+}
+
+.faq-question h3 {
+    color: var(--dark-blue);
+    font-size: var(--fs-600);
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+}
+
+.faq-answer {
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    transition: opacity 0.5s, height 0.5s;
+    display: none;
+}
+
+.faq-answer p {
+    font-size: var(--fs-600);
+}
+
+.faq-title-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.faq-icon {
+    width: 32px;
+}
+
 @media screen and (max-width: 1440px) {
     .banner-title {
         top: 0;
