@@ -213,28 +213,25 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Contacts link
+    // Contacts links
     const scrollToFooterLinks = document.querySelectorAll('.scroll-to-footer');
     const footer = document.querySelector('.footer');
 
     scrollToFooterLinks.forEach(link => {
         link.addEventListener('click', function(event) {
-            event.preventDefault(); 
+            event.preventDefault();
+            popUpMenu.classList.remove('active');
+            overlay.style.display = 'none'; 
             footer.scrollIntoView({ behavior: 'smooth' });
         });
     });
 
-    /* const scrollToAboutUsLinks = document.querySelectorAll('.scroll-to-about-us');
-    const aboutUsSection = document.getElementById('about-us'); */
-
-   /*  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault(); // Prevent default anchor click behavior
-            var hash = this.getAttribute('href');
-            var target = document.querySelector(hash);
-            if (target) {
-                target.scrollIntoView({behavior: "smooth"});
-            }
+    const mobileLinks = document.querySelectorAll('.pop-up-remove');
+    mobileLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+            popUpMenu.classList.remove('active');
+            overlay.style.display = 'none'; 
         });
-    }); */
+    });
+
 });
