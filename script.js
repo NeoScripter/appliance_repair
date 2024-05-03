@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
     openBurgerMenu.addEventListener('click', () => {
         popUpMenu.classList.remove('active');
         setTimeout(() => {
-            overlay.style.display = 'none'
+            overlay.style.display = 'none';
         }, 50);
     });
 
@@ -212,4 +212,29 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     });
+
+    // Contacts link
+    const scrollToFooterLinks = document.querySelectorAll('.scroll-to-footer');
+    const footer = document.querySelector('.footer');
+
+    scrollToFooterLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault(); 
+            footer.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+    /* const scrollToAboutUsLinks = document.querySelectorAll('.scroll-to-about-us');
+    const aboutUsSection = document.getElementById('about-us'); */
+
+   /*  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault(); // Prevent default anchor click behavior
+            var hash = this.getAttribute('href');
+            var target = document.querySelector(hash);
+            if (target) {
+                target.scrollIntoView({behavior: "smooth"});
+            }
+        });
+    }); */
 });

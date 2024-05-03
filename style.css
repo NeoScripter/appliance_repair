@@ -28,6 +28,12 @@
     src: url(assets/fonts/ActayWide-Bold.otf);
 }
 
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
 body {
     font-family: 'Actay Regular';
     display: flex;
@@ -54,7 +60,9 @@ section {
     gap: 80px;
     position: sticky;
     top: 0;
-    position: relative;
+    background-color: var(--white);
+    z-index: 300;
+    box-shadow: 0 4px 4px rgb(0,0,0,0.4);
 }
 
 .logo-wrapper {
