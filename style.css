@@ -796,6 +796,11 @@ textarea::placeholder {
     font-weight: 500;
 }
 
+.social-link:hover, .social-link:focus {
+    color: var(--white);
+    background-color: var(--dark-blue);
+}
+
 @media screen and (max-width: 1440px) {
     .banner-title {
         top: 0;
