@@ -785,7 +785,7 @@ textarea::placeholder {
     flex: 100 1 47%;
 }
 
-.social-link {
+.social-link-footer {
     display: block;
     border: 2px solid var(--dark-blue);
     padding: 22px;
@@ -794,9 +794,10 @@ textarea::placeholder {
     color: var(--dark-blue);
     border-radius: 10px;
     font-weight: 500;
+    text-decoration: none;
 }
 
-.social-link:hover, .social-link:focus {
+.social-link-footer:hover, .social-link-footer:focus {
     color: var(--white);
     background-color: var(--dark-blue);
 }
