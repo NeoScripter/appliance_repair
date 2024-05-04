@@ -888,6 +888,26 @@ input[type="tel"]:focus {
     background-color: var(--dark-blue);
 }
 
+/* Services */
+
+.services-title-wrapper {
+    margin-block: 32px;
+}
+
+.services-h1 {
+    color: var(--dark-blue);
+    font-family: 'Actay Bold';
+    font-size: var(--fs-900);
+    line-height: 76.8px;
+    text-transform: uppercase;
+}
+
+.services-title-prg {
+    font-size: var(--fs-700);
+    max-width: 960px;
+    margin-left: auto;
+}
+
 @media screen and (max-width: 1440px) {
     .banner-title {
         top: 0;
@@ -987,9 +1007,12 @@ input[type="tel"]:focus {
     .banner-desc {
         width: 100%;
     }
-    .banner-h1 {
+    .banner-h1, .services-h1 {
         font-size: var(--fs-850);
         line-height: 57.6px;
+    }
+    .services-title-prg {
+        font-size: var(--fs-500);
     }
     .banner-img {
         margin-block: 48px;
