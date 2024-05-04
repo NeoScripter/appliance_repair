@@ -9,6 +9,40 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+    <div class="webform-popup-overlay">
+        <form action="" class="request-form popup-form">
+            <img src="assets/svgs/close-thick.svg" alt="close sign" class="webform-close-btn">
+            <div>
+                <h2 class="eq-title">YOUR APPLIANCE</h2>
+                <h2 class="eq-title"><span class="orange">NEEDS REPAIR?</span></h2>
+            </div>
+            <p class="pop-up-prg">Please provide your contact details and we'll get in touch within 30 minutes to arrange the specialist's visit.</p>
+            <label for="username" class="hidden-label">Your name</label>
+            <div class="input-wrapper">
+                <input type="text" name="username" placeholder="Your Name" aria-label="Username">
+                <img src="assets/svgs/invalid-input.svg" alt="red exclamation point" class="invalid-input">
+            </div>
+            <label for="phone" class="hidden-label">Your Phone</label>
+            <div class="input-wrapper">
+                <input type="tel" name="phone" placeholder="Your Phone" aria-label="Phone number">
+                <img src="assets/svgs/invalid-input.svg" alt="red exclamation point" class="invalid-input">
+            </div>
+            <label for="address" class="hidden-label">Your Address</label>
+            <div class="input-wrapper">
+                <input type="text" name="address" placeholder="Your Address" aria-label="Address">
+                <img src="assets/svgs/invalid-input.svg" alt="red exclamation point" class="invalid-input">
+            </div>
+            <label for="user_message" class="hidden-label">Briefly describe your problem</label>
+            <textarea name="userMessage" placeholder="Briefly describe your problem"></textarea>
+            <div class="checkbox-wrapper">
+                <label for="user_message" class="checkbox-label">
+                    <input type="checkbox" required>
+                </label>
+                <p>By clicking the button, you agree to the <a href="" class="policy-link">privacy policy</a></p>
+            </div>
+            <button type="submit" class="repair-request request submit-btn"><img src="assets/svgs/+orange.svg" alt="plus" class="plus-sign-btn">Repair request</button>
+        </form>
+    </div>
     <div class="wrapper">
         <nav class="nav">
             <div class="logo-wrapper">
@@ -24,7 +58,7 @@
                 <li class="nav-list-item scroll-to-footer"><a href="#">04. Contacts</a></li>
             </ul>
             <div class="social-links desktop">
-                <a href="" class="social-link">+1 (650) 705-65-91</a>
+                <a href="tel:+16507056591" class="social-link">+1 (650) 705-65-91</a>
                 <a href="" class="social-link viber"><img src="assets/svgs/viber.normal.svg" alt="Viber" class="icon-social"></a>
                 <a href="" class="social-link whatsapp"><img src="assets/svgs/whatsapp.normal.svg" alt="WhatsApp" class="icon-social"></a>
             </div>
@@ -52,12 +86,170 @@
                     </div>
                     <div class="pop-up-bottom">
                         <p class="pop-up-prg">Please provide your contact details and we'll get in touch within 30 minutes to arrange the specialist's visit.</p>
-                        <div class="pop-up-btn repair-request request"><img src="assets/svgs/+white.svg" alt="plus" class="plus-sign-btn">Repair request</div>
-                        <div class="repair-request">Call</div>
+                        <div class="pop-up-btn repair-request request popup-webform"><img src="assets/svgs/+white.svg" alt="plus" class="plus-sign-btn">Repair request</div>
+                        <a href="tel:+16507056591" class="repair-request">Call</a>
                     </div>
                 </div>
             </div>
         </nav>
+        <main>
+            <section class="stages">
+                <h2 class="eq-title title-animated">JUST <span class="orange">A FEW OF STEPS</span></h2>
+                <h2 class="eq-title title-animated">AND YOUR EQUIPMENT WILL BE FIXED</h2>
+                <div class="stages-flex-group">
+                    <div class="flex-wrap">
+                        <div class="flex-item-content">
+                            <div class="digit">01</div>
+                            <p class="stage-prg">Submit a repair request by phone or online</p>
+                        </div>
+                        <div class="flex-item-arrow yellow">
+                            <img src="assets/svgs/arrow-yellow.svg" alt="yellow arrow pointed to the right">
+                        </div>
+                        <div class="flex-item-content">
+                            <div class="digit">02</div>
+                            <p class="stage-prg">We'll schedule an appointment</p>
+                        </div>
+                    </div>
+                    <div class="flex-wrap">
+                        <div class="flex-item-arrow">
+                            <img src="assets/svgs/arrow-grey.svg" alt="grey arrow pointed to the right">
+                        </div>
+                        <div class="flex-item-content">
+                            <div class="digit">03</div>
+                            <p class="stage-prg">A repairman will arrive</p>
+                        </div>
+                        <div class="flex-item-arrow">
+                            <img src="assets/svgs/arrow-grey.svg" alt="grey arrow pointed to the right">
+                        </div>
+                        <div class="flex-item-content">
+                            <div class="digit">04</div>
+                            <p class="stage-prg">Your device will be repaired!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="stage-img-wrapper">
+                    <div class="stage-img-grid-group">
+                        <img src="assets/images/stages-left.png" alt="The back of a fridge and the floor below it with various tools scattered around" class="stage-img">
+                        <img src="assets/images/stages-right.png" alt="Removed top of a stove turned upside down lying on a tabletop" class="stage-img">
+                    </div>
+                </div>
+            </section>
+            <section class="webform">
+                <div class="webform-overlay"></div>
+                <div class="webform-top">
+                    <h2 class="eq-title title-animated"><span class="orange">CALL A SPECIALIST</span></h2>
+                    <h2 class="eq-title title-animated">TO YOUR HOME</h2>
+                    <p>Leave your contacts, we will contact you within 30 minutes and schedule the arrival of the specialist</p>
+                </div>
+                <form action="" class="request-form">
+                    <label for="username" class="hidden-label">Your name</label>
+                    <div class="input-wrapper">
+                        <input type="text" name="username" placeholder="Your Name" aria-label="Username">
+                        <img src="assets/svgs/invalid-input.svg" alt="red exclamation point" class="invalid-input">
+                    </div>
+                    <label for="phone" class="hidden-label">Your Phone</label>
+                    <div class="input-wrapper">
+                        <input type="tel" name="phone" placeholder="Your Phone" aria-label="Phone number">
+                        <img src="assets/svgs/invalid-input.svg" alt="red exclamation point" class="invalid-input">
+                    </div>
+                    <label for="address" class="hidden-label">Your Address</label>
+                    <div class="input-wrapper">
+                        <input type="text" name="address" placeholder="Your Address" aria-label="Address">
+                        <img src="assets/svgs/invalid-input.svg" alt="red exclamation point" class="invalid-input">
+                    </div>
+                    <label for="user_message" class="hidden-label">Briefly describe your problem</label>
+                    <textarea name="userMessage" placeholder="Briefly describe your problem"></textarea>
+                    <div class="checkbox-wrapper">
+                        <label for="user_message" class="checkbox-label">
+                            <input type="checkbox" required>
+                        </label>
+                        <p>By clicking the button, you agree to the <a href="" class="policy-link">privacy policy</a></p>
+                    </div>
+                    <button type="submit" class="repair-request request submit-btn"><img src="assets/svgs/+orange.svg" alt="plus" class="plus-sign-btn">Repair request</button>
+                </form>
+                <img src="assets/images/gears.png" alt="Two round grey gears" class="gears-img">
+            </section>
+            <section class="reviews">
+                <div class="reviews-title">
+                    <h2 class="eq-title title-animated"><span class="orange">WHAT OUR</span></h2>
+                    <h2 class="eq-title title-animated">CUSTOMERS SAY</h2>
+                </div>
+                <div class="carousel-container">
+                    <div class="carousel-viewport">
+                        <div class="carousel-track">
+                            <div class="carousel-item">
+                                <h2 class="item-title">David Martinez</h2>
+                                <img src="assets/svgs/reviews-svg.svg" alt="big orange quotes" class="review-svg">
+                                <p>Quick response and excellent repair service. My dishwasher is as good as new. Thank you for a job well done!</p>
+                            </div>
+                            <div class="carousel-item">
+                                <h2 class="item-title">Anna</h2>
+                                <img src="assets/svgs/reviews-svg.svg" alt="big orange quotes" class="review-svg">
+                                <p>Professional and friendly service.</p>
+                            </div>
+                            <div class="carousel-item">
+                                <h2 class="item-title">Sarah Wilson</h2>
+                                <img src="assets/svgs/reviews-svg.svg" alt="big orange quotes" class="review-svg">
+                                <p>Prompt and reliable service. The technician diagnosed the issue with my oven quickly and had it repaired in no time. Very satisfied!</p>
+                            </div>
+                            <div class="carousel-item">
+                                <h2 class="item-title">Jennifer Brown</h2>
+                                <img src="assets/svgs/reviews-svg.svg" alt="big orange quotes" class="review-svg">
+                                <p>The technician was courteous and efficient. Will definitely use their services again.</p>
+                            </div>
+                            <div class="carousel-item">
+                                <h2 class="item-title">Emily</h2>
+                                <img src="assets/svgs/reviews-svg.svg" alt="big orange quotes" class="review-svg">
+                                <p>My washing machine works perfectly now.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="arrow-wrapper">
+                        <img src="assets/svgs/arrow.back.normal.svg" alt="arrow pointing back" class="carousel-arrow prev-btn">
+                        <img src="assets/svgs/arrow.forward.normal.svg" alt="arrow pointing back" class="carousel-arrow next-btn">
+                    </div>
+                </div>
+                <h2 class="eq-title title-animated mr-blck-40">FAQ</h2>
+                <div class="faq-section">
+                    <div class="faq-question">
+                        <div class="faq-title-wrapper">
+                            <h3>What is the cost of diagnostics?</h3>
+                            <img src="assets/svgs/faq-normal.svg" alt="blue plus sign" class="faq-icon">
+                        </div>
+                        <div class="faq-answer">
+                            <p>Diagnostics are free if the repairs are carried out by our company; otherwise, there is a $120 diagnostic fee.</p>
+                        </div>
+                    </div>
+                    <div class="faq-question">
+                        <div class="faq-title-wrapper">
+                            <h3>How can I make a payment?</h3>
+                            <img src="assets/svgs/faq-normal.svg" alt="blue plus sign" class="faq-icon">
+                        </div>
+                        <div class="faq-answer">
+                            <p>We accept payments via debit, credit, e-transfer, checks, or cash.</p>
+                        </div>
+                    </div>
+                    <div class="faq-question">
+                        <div class="faq-title-wrapper">
+                            <h3>Should I repair or replace my appliance?</h3>
+                            <img src="assets/svgs/faq-normal.svg" alt="blue plus sign" class="faq-icon">
+                        </div>
+                        <div class="faq-answer">
+                            <p>When a home appliance breaks down, you typically face two options: repair it or replace it with a new one. Consult our repairman to determine the likelihood that repairing or replacing a faulty part will keep your appliance running smoothly for years to come. Keep in mind that all appliances have a lifespan. If your broken appliance is still within the early years of its expected lifespan, it's usually advisable to repair or replace the malfunctioning part.</p>
+                            <p>Average lifespans of various household appliances:</p>
+                            <br>
+                            <p>Dishwasher: 10 years</p>
+                            <p>Washer: 11 years</p>
+                            <p>Dryer: 14 years</p>
+                            <p>Refrigerator: 15 years</p>
+                            <p>Gas oven: 15 years</p>
+                            <p>Electric stove: 15 years</p>
+                            <p>Freezer: 15 years</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
         <footer class="footer">
             <h2 class="eq-title title-animated">FEEL FREE TO <span class="orange">CONTACT US</span></h2>
             <h2 class="eq-title title-animated">WITH ANY QUESTIONS</h2>
@@ -67,8 +259,8 @@
                 <a href="" class="social-link-footer">WhatsApp</a>
             </div>
             <div class="footer-flex-group bottom">
-                <a href="" class="social-link-footer">+1 (650) 705-65-91</a>
-                <a href="" class="social-link-footer">adress@gmail.com</a>
+                <a href="tel:+16507056591" class="social-link-footer">+1 (650) 705-65-91</a>
+                <a href="mailto:Exphomeservice@gmail.com" class="social-link-footer">Exphomeservice@gmail.com</a>
             </div>
         </footer>
     </div>

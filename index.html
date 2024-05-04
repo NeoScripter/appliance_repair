@@ -9,6 +9,40 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+    <div class="webform-popup-overlay">
+        <form action="" class="request-form popup-form">
+            <img src="assets/svgs/close-thick.svg" alt="close sign" class="webform-close-btn">
+            <div>
+                <h2 class="eq-title">YOUR APPLIANCE</h2>
+                <h2 class="eq-title"><span class="orange">NEEDS REPAIR?</span></h2>
+            </div>
+            <p class="pop-up-prg">Please provide your contact details and we'll get in touch within 30 minutes to arrange the specialist's visit.</p>
+            <label for="username" class="hidden-label">Your name</label>
+            <div class="input-wrapper">
+                <input type="text" name="username" placeholder="Your Name" aria-label="Username">
+                <img src="assets/svgs/invalid-input.svg" alt="red exclamation point" class="invalid-input">
+            </div>
+            <label for="phone" class="hidden-label">Your Phone</label>
+            <div class="input-wrapper">
+                <input type="tel" name="phone" placeholder="Your Phone" aria-label="Phone number">
+                <img src="assets/svgs/invalid-input.svg" alt="red exclamation point" class="invalid-input">
+            </div>
+            <label for="address" class="hidden-label">Your Address</label>
+            <div class="input-wrapper">
+                <input type="text" name="address" placeholder="Your Address" aria-label="Address">
+                <img src="assets/svgs/invalid-input.svg" alt="red exclamation point" class="invalid-input">
+            </div>
+            <label for="user_message" class="hidden-label">Briefly describe your problem</label>
+            <textarea name="userMessage" placeholder="Briefly describe your problem"></textarea>
+            <div class="checkbox-wrapper">
+                <label for="user_message" class="checkbox-label">
+                    <input type="checkbox" required>
+                </label>
+                <p>By clicking the button, you agree to the <a href="" class="policy-link">privacy policy</a></p>
+            </div>
+            <button type="submit" class="repair-request request submit-btn"><img src="assets/svgs/+orange.svg" alt="plus" class="plus-sign-btn">Repair request</button>
+        </form>
+    </div>
     <div class="wrapper">
         <nav class="nav">
             <div class="logo-wrapper">
@@ -24,7 +58,7 @@
                 <li class="nav-list-item scroll-to-footer"><a href="#">04. Contacts</a></li>
             </ul>
             <div class="social-links desktop">
-                <a href="" class="social-link">+1 (650) 705-65-91</a>
+                <a href="tel:+16507056591" class="social-link">+1 (650) 705-65-91</a>
                 <a href="" class="social-link viber"><img src="assets/svgs/viber.normal.svg" alt="Viber" class="icon-social"></a>
                 <a href="" class="social-link whatsapp"><img src="assets/svgs/whatsapp.normal.svg" alt="WhatsApp" class="icon-social"></a>
             </div>
@@ -52,8 +86,8 @@
                     </div>
                     <div class="pop-up-bottom">
                         <p class="pop-up-prg">Please provide your contact details and we'll get in touch within 30 minutes to arrange the specialist's visit.</p>
-                        <div class="pop-up-btn repair-request request"><img src="assets/svgs/+white.svg" alt="plus" class="plus-sign-btn">Repair request</div>
-                        <div class="repair-request">Call</div>
+                        <div class="pop-up-btn repair-request request popup-webform"><img src="assets/svgs/+white.svg" alt="plus" class="plus-sign-btn">Repair request</div>
+                        <a href="tel:+16507056591" class="repair-request">Call</a>
                     </div>
                 </div>
             </div>
@@ -70,7 +104,7 @@
                 </div>
                 <div class="banner-pop-up">
                     <p class="bnr-pop-up-prg">Submit your request and our manager will contact you</p>
-                    <div class="repair-request request"><img src="assets/svgs/+orange.svg" alt="plus" class="plus-sign-btn">Repair request</div>
+                    <div class="repair-request request popup-webform"><img src="assets/svgs/+orange.svg" alt="plus" class="plus-sign-btn">Repair request</div>
                 </div>
                 <div class="banner-img">
                     <img src="assets/images/appliances/bnr-img.png" alt="grey fridge, stove and washing machine staying next to each other" class="bnr-img">
@@ -100,7 +134,7 @@
                     <a href="" class="eq-service-item"><img src="assets/images/icon_service_items/icon_freezer.svg" alt="freezer"><p>freezer</p></a>
                 </div>
                 <div class="banner-bottom">
-                    <a href="" class="repair-request request"><img src="assets/svgs/+orange.svg" alt="plus" class="plus-sign-btn">All services</a>
+                    <a href="services.html" class="repair-request request"><img src="assets/svgs/+orange.svg" alt="plus" class="plus-sign-btn">All services</a>
                 </div>
             </section>
             <section class="about" id="about">
@@ -205,16 +239,25 @@
                 </div>
                 <form action="" class="request-form">
                     <label for="username" class="hidden-label">Your name</label>
-                    <input type="text" name="username" placeholder="Your Name" aria-label="Username">
+                    <div class="input-wrapper">
+                        <input type="text" name="username" placeholder="Your Name" aria-label="Username">
+                        <img src="assets/svgs/invalid-input.svg" alt="red exclamation point" class="invalid-input">
+                    </div>
                     <label for="phone" class="hidden-label">Your Phone</label>
-                    <input type="tel" name="phone" placeholder="Your Phone" aria-label="Phone number">
+                    <div class="input-wrapper">
+                        <input type="tel" name="phone" placeholder="Your Phone" aria-label="Phone number">
+                        <img src="assets/svgs/invalid-input.svg" alt="red exclamation point" class="invalid-input">
+                    </div>
                     <label for="address" class="hidden-label">Your Address</label>
-                    <input type="text" name="address" placeholder="Your Address" aria-label="Address">
+                    <div class="input-wrapper">
+                        <input type="text" name="address" placeholder="Your Address" aria-label="Address">
+                        <img src="assets/svgs/invalid-input.svg" alt="red exclamation point" class="invalid-input">
+                    </div>
                     <label for="user_message" class="hidden-label">Briefly describe your problem</label>
                     <textarea name="userMessage" placeholder="Briefly describe your problem"></textarea>
                     <div class="checkbox-wrapper">
                         <label for="user_message" class="checkbox-label">
-                            <input type="checkbox">
+                            <input type="checkbox" required>
                         </label>
                         <p>By clicking the button, you agree to the <a href="" class="policy-link">privacy policy</a></p>
                     </div>
@@ -312,8 +355,8 @@
                 <a href="" class="social-link-footer">WhatsApp</a>
             </div>
             <div class="footer-flex-group bottom">
-                <a href="" class="social-link-footer">+1 (650) 705-65-91</a>
-                <a href="" class="social-link-footer">adress@gmail.com</a>
+                <a href="tel:+16507056591" class="social-link-footer">+1 (650) 705-65-91</a>
+                <a href="mailto:Exphomeservice@gmail.com" class="social-link-footer">Exphomeservice@gmail.com</a>
             </div>
         </footer>
     </div>

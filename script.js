@@ -234,4 +234,16 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+    const repairRequestBtns = document.querySelectorAll('.repair-request.popup-webform');
+    const closeRequestPopUpForm = document.querySelectorAll('.webform-close-btn');
+    repairRequestBtns.forEach(button => {
+        button.addEventListener('click', () => {
+            document.querySelector('.webform-popup-overlay').style.display = 'flex';
+        })
+    });
+    closeRequestPopUpForm.forEach(button => {
+        button.addEventListener('click', () => {
+            document.querySelector('.webform-popup-overlay').style.display = 'none';
+        })
+    });
 });
