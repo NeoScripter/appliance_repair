@@ -133,7 +133,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
         function handleTouchStart(e) {
             startX = e.touches[0].clientX;
-            e.preventDefault();
         }
 
         function handleTouchMove(e) {
@@ -152,77 +151,72 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
     }
-
         
     // Arrow buttons hovering effect
-    function toggleArrow(arrowBtn) {
-        const isNormal = arrowBtn.src.endsWith("normal.svg");
-
+    function toggleArrow(button) {
+        const isNormal = button.getAttribute('data-state') === 'normal';
         if (isNormal) {
-            arrowBtn.src = arrowBtn.src.replace("normal.svg", "hover.svg");
+            button.src = button.src.replace("normal.svg", "hover.svg");
+            button.setAttribute('data-state', 'hover');
         } else {
-            arrowBtn.src = arrowBtn.src.replace("hover.svg", "normal.svg");
+            button.src = button.src.replace("hover.svg", "normal.svg");
+            button.setAttribute('data-state', 'normal');
         }
     }
-
-    const arrowBtns = document.querySelectorAll('.carousel-arrow');
-    arrowBtns.forEach((button) => {
-        
-        button.addEventListener('mouseover', () => {
-            toggleArrow(button);
+    
+    function addEventListenersForArrows(buttons) {
+        buttons.forEach(button => {
+            button.setAttribute('data-state', button.src.includes('normal.svg') ? 'normal' : 'hover');
+            button.addEventListener('mouseenter', () => toggleArrow(button));
+            button.addEventListener('mouseleave', () => toggleArrow(button));
         });
-
-        button.addEventListener('mouseout', () => {
-            toggleArrow(button);
-        });
-    });
-
-    const faqIcons = document.querySelectorAll('.faq-icon');
-    faqIcons.forEach((button) => {
-        
-        button.addEventListener('mouseover', () => {
-            toggleArrow(button);
-        });
-
-        button.addEventListener('mouseout', () => {
-            toggleArrow(button);
-        });
-    });
+    }
+    
+    const buttons = document.querySelectorAll('.carousel-arrow, .faq-icon');
+    addEventListenersForArrows(buttons);
+    
 
     // Hidable FAQ sections
 
     const faqQuestions = document.querySelectorAll('.faq-question');
 
     faqQuestions.forEach((question) => {
-        const closestIcon = question.querySelector('.faq-icon');
-        closestIcon.addEventListener('click', () => {
-            const closestAnswer = question.closest('.faq-question').querySelector('.faq-answer');
-            if (getComputedStyle(closestAnswer).height === "0px") {
-                closestAnswer.style.display = 'block';
-                closestAnswer.style.marginTop = '24px';
-                const height = closestAnswer.scrollHeight + "px";
+        const icon = question.querySelector('.faq-icon');
+        const answer = question.querySelector('.faq-answer');
 
-                closestIcon.src = closestIcon.src.replace("hover.svg", "active.svg");
-                
-                closestAnswer.style.height = "0";
-                closestAnswer.style.opacity = "0";
-                requestAnimationFrame(() => {
-                    closestAnswer.style.height = height;
-                    closestAnswer.style.opacity = "1";
-                });
-            } else {
-                closestAnswer.style.height = "0";
-                closestAnswer.style.opacity = "0";
-                closestIcon.src = closestIcon.src.replace("active.svg", "hover.svg");
-                setTimeout(() => {
-                    closestAnswer.style.marginTop = '0px';
-                }, 250);
-                setTimeout(() => {
-                    closestAnswer.style.display = 'none';
-                }, 500);
-            }
+        icon.addEventListener('click', () => {
+            toggleFAQ(answer, icon);
         });
     });
+
+    function toggleFAQ(answer, icon) {
+        const isOpen = answer.style.height !== "0px" && answer.style.height !== "";
+        
+        if (!isOpen) {
+            answer.style.display = 'block';
+            answer.style.height = '0';
+            answer.style.opacity = '0';
+            answer.style.marginTop = '24px';
+
+            const height = answer.scrollHeight + "px";
+            requestAnimationFrame(() => {
+                answer.style.height = height;
+                answer.style.opacity = "1";
+            });
+
+            icon.src = icon.src.replace("hover.svg", "active.svg");
+        } else {
+            answer.style.height = "0";
+            answer.style.opacity = "0";
+
+            setTimeout(() => {
+                answer.style.marginTop = '0px';
+                answer.style.display = 'none';
+            }, 500); 
+
+            icon.src = icon.src.replace("active.svg", "hover.svg");
+        }
+    }
 
     // Contacts links
     const scrollToFooterLinks = document.querySelectorAll('.scroll-to-footer');
@@ -245,30 +239,25 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    const repairRequestBtns = document.querySelectorAll('.repair-request.popup-webform');
-    const closeRequestPopUpForm = document.querySelectorAll('.webform-close-btn');
-    repairRequestBtns.forEach(button => {
-        button.addEventListener('click', () => {
-            document.querySelector('.webform-popup-overlay').classList.add('visible-pop-up');
-        })
-    });
-    closeRequestPopUpForm.forEach(button => {
-        button.addEventListener('click', () => {
-            document.querySelector('.webform-popup-overlay').classList.remove('visible-pop-up');
-        })
-    });
+    // Function to toggle visibility of an overlay
+    function toggleOverlay(button, overlayClass, isVisible) {
+        let container = button.closest('body'); 
 
-    const policyBtns = document.querySelectorAll('.policy-link');
-    const closePolicyBtn = document.querySelectorAll('.policy-close-btn');
-    policyBtns.forEach(button => {
-        button.addEventListener('click', () => {
-            document.querySelector('.policy-overlay').classList.add('visible-pop-up');
-        })
-    });
-    closePolicyBtn.forEach(button => {
-        button.addEventListener('click', () => {
-            document.querySelector('.policy-overlay').classList.remove('visible-pop-up');
-        })
-    });
+        const overlay = container.querySelector(overlayClass);
+        if (overlay) {
+            overlay.classList.toggle('visible-pop-up', isVisible);
+        }
+    }
+
+    function setupButtonListeners(buttonSelector, overlaySelector, shouldShow) {
+        document.querySelectorAll(buttonSelector).forEach(button => {
+            button.addEventListener('click', () => toggleOverlay(button, overlaySelector, shouldShow));
+        });
+    }
+
+    setupButtonListeners('.repair-request.popup-webform', '.webform-popup-overlay', true);
+    setupButtonListeners('.webform-close-btn', '.webform-popup-overlay', false);
+    setupButtonListeners('.policy-link', '.policy-overlay', true);
+    setupButtonListeners('.policy-close-btn', '.policy-overlay', false);
 
 });

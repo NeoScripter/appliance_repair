@@ -878,7 +878,7 @@ input[type="tel"]:focus {
     overflow: hidden;
     height: 0;
     opacity: 0;
-    transition: opacity 0.5s, height 0.5s;
+    transition: height 0.5s ease, opacity 0.5s ease, margin-top 0.5s ease;
     display: none;
 }
 
