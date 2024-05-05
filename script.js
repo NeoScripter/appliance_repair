@@ -96,9 +96,13 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Reviews carousel
-    const carouselViewport = document.querySelectorAll('.carousel-viewport');
-    carouselViewport.forEach((carouselContainer) => {
+    const carouselViewports = document.querySelectorAll('.carousel-viewport');
+    
+    carouselViewports.forEach(carouselContainer => {
+        setupCarousel(carouselContainer);
+    });
 
+    function setupCarousel(carouselContainer) {
         const track = carouselContainer.querySelector('.carousel-track');
         const items = Array.from(track.children);
         const btnContainer = carouselContainer.nextElementSibling;
@@ -106,52 +110,48 @@ document.addEventListener("DOMContentLoaded", function() {
         const prevButton = btnContainer.querySelector('.prev-btn');
         const itemWidth = items[0].getBoundingClientRect().width;
         let currentSlide = 0;
-        let startX; // Starting X position of touch
-        let moveX; // Distance moved during touch
+        let startX;
 
-        nextButton.addEventListener('click', moveToNextSlide);
-        prevButton.addEventListener('click', moveToPreviousSlide);
+        nextButton.addEventListener('click', () => moveSlide(1));
+        prevButton.addEventListener('click', () => moveSlide(-1));
 
-        // Event handler for next slide
-        function moveToNextSlide() {
-            if (currentSlide < items.length - 1) {
-                currentSlide++;
+        track.addEventListener('touchstart', handleTouchStart, { passive: false });
+        track.addEventListener('touchmove', handleTouchMove, { passive: false });
+        track.addEventListener('touchend', handleTouchEnd);
+
+        function moveSlide(direction) {
+            const newPosition = currentSlide + direction;
+            if (newPosition >= 0 && newPosition < items.length) {
+                currentSlide = newPosition;
                 moveTrack((itemWidth + 24) * currentSlide);
             }
         }
 
-        // Event handler for previous slide
-        function moveToPreviousSlide() {
-            if (currentSlide > 0) {
-                currentSlide--;
-                moveTrack((itemWidth + 24) * currentSlide);
-            }
-        }
-
-        // Move the track
         function moveTrack(position) {
             track.style.transform = `translateX(-${position}px)`;
         }
-        // Touch events
-        track.addEventListener('touchstart', (e) => {
+
+        function handleTouchStart(e) {
             startX = e.touches[0].clientX;
             e.preventDefault();
-        }, { passive: false });
-        
-        track.addEventListener('touchmove', (e) => {
-            moveX = e.touches[0].clientX - startX;
-            e.preventDefault();
-        }, { passive: false });
+        }
 
-        track.addEventListener('touchend', (e) => {
-            if (moveX > 50) { // Threshold for swipe action, adjust as needed
-                moveToPreviousSlide(); // Swiped right
-            } else if (moveX < -50) { // Threshold for swipe action, adjust as needed
-                moveToNextSlide(); // Swiped left
+        function handleTouchMove(e) {
+            const moveX = e.touches[0].clientX - startX;
+            if (Math.abs(moveX) > 5) {
+                e.preventDefault();
             }
-            e.preventDefault();
-        });
-    });
+        }
+
+        function handleTouchEnd(e) {
+            const moveX = e.changedTouches[0].clientX - startX;
+            if (moveX > 50) {
+                moveSlide(-1);
+            } else if (moveX < -50) {
+                moveSlide(1);
+            }
+        }
+    }
 
         
     // Arrow buttons hovering effect
