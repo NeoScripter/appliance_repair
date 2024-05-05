@@ -273,10 +273,6 @@ section {
     color: var(--bright-orange);
 }
 
-.orange.gap::before {
-    content: "\00a0";
-}
-
 .banner-title-prg {
     font-size: var(--fs-700);
     width: 551px;
@@ -748,7 +744,7 @@ input[type="tel"]:focus {
     z-index: 501 !important;
 }
 
-.visible {
+.visible-pop-up {
     display: flex;
 }
 

@@ -251,12 +251,12 @@ document.addEventListener("DOMContentLoaded", function() {
     const closePolicyBtn = document.querySelectorAll('.policy-close-btn');
     policyBtns.forEach(button => {
         button.addEventListener('click', () => {
-            document.querySelector('.policy-overlay').classList.add('visible');
+            document.querySelector('.policy-overlay').classList.add('visible-pop-up');
         })
     });
     closePolicyBtn.forEach(button => {
         button.addEventListener('click', () => {
-            document.querySelector('.policy-overlay').classList.remove('visible');
+            document.querySelector('.policy-overlay').classList.remove('visible-pop-up');
         })
     });
 
