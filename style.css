@@ -48,6 +48,7 @@ body {
     min-height: 100vh;
     padding: 12px;
     position: relative;
+    padding-top: 72px;
 }
 
 section {
@@ -59,11 +60,13 @@ section {
 .nav {
     display: flex;
     gap: 80px;
-    position: sticky;
+    position: fixed;
     top: 0;
     background-color: var(--white);
     z-index: 300;
-    box-shadow: 0 4px 4px rgb(0,0,0,0.4);
+    width: min(1588px, calc(100% - 24px));
+    padding-block: 12px;
+    box-shadow: 0 2px 2px rgb(128, 128, 128, 0.3);
 }
 
 .logo-wrapper {
@@ -268,6 +271,10 @@ section {
 
 .orange {
     color: var(--bright-orange);
+}
+
+.orange.gap::before {
+    content: "\00a0";
 }
 
 .banner-title-prg {
@@ -926,6 +933,10 @@ input[type="tel"]:focus {
 }
 
 /* Services */
+
+.our-services {
+    padding-top:50px;
+}
 
 .services-title-wrapper {
     margin-block: 32px;
