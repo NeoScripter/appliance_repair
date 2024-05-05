@@ -1,29 +1,37 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Social links animaition
-    const whatsappLink = document.querySelector('.social-link.whatsapp');
-    const whatsappIcon = document.querySelector('.whatsapp .icon-social');
-    const viberLink = document.querySelector('.social-link.viber');
-    const viberIcon = document.querySelector('.viber .icon-social');
+    function addSocialLinksEventListeners(link, icon, basePath) {
+        const hoverSrc = `assets/svgs/${basePath}.hover.svg`;
+        const normalSrc = `assets/svgs/${basePath}.normal.svg`;
 
-    const whatsappLinkPopUp = document.querySelector('.social-link.whatsapp.pop-up');
-    const whatsappIconPopUp = document.querySelector('.whatsapp .icon-social.pop-up');
-    const viberLinkPopUp = document.querySelector('.social-link.viber.pop-up');
-    const viberIconPopUp = document.querySelector('.viber .icon-social.pop-up');
-
-
-    function addSocialLinksEventListeners(link, icon, path) {
         link.addEventListener('mouseover', () => {
-            icon.src = `assets/svgs/${path}.hover.svg`;
-            link.addEventListener('mouseout', () => {
-                icon.src = `assets/svgs/${path}.normal.svg`;
-            });
+            icon.src = hoverSrc;
+        });
+
+        link.addEventListener('mouseout', () => {
+            icon.src = normalSrc;
         });
     }
 
-    addSocialLinksEventListeners(whatsappLink, whatsappIcon, 'whatsapp');
-    addSocialLinksEventListeners(viberLink, viberIcon, 'viber');
-    addSocialLinksEventListeners(whatsappLinkPopUp, whatsappIconPopUp, 'whatsapp');
-    addSocialLinksEventListeners(viberLinkPopUp, viberIconPopUp, 'viber');
+    // Function to initialize event listeners for a social link
+    function initializeSocialLink(baseSelector, basePath) {
+        const link = document.querySelector(`${baseSelector}.social-link`);
+        const icon = document.querySelector(`${baseSelector} .icon-social`);
+        const linkPopUp = document.querySelector(`${baseSelector}.social-link.pop-up`);
+        const iconPopUp = document.querySelector(`${baseSelector} .icon-social.pop-up`);
+
+        if (link && icon) {
+            addSocialLinksEventListeners(link, icon, basePath);
+        }
+        if (linkPopUp && iconPopUp) {
+            addSocialLinksEventListeners(linkPopUp, iconPopUp, basePath);
+        }
+    }
+
+    // Initialize all social links
+    initializeSocialLink('.whatsapp', 'whatsapp');
+    initializeSocialLink('.viber', 'viber');
+
 
     // Burger menu animation
     const popUpMenu = document.querySelector('.pop-up-menu');
@@ -126,14 +134,14 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         // Touch events
         track.addEventListener('touchstart', (e) => {
-            startX = e.touches[0].clientX; // Get the initial touch point
-            e.preventDefault(); // Prevent default behavior (scrolling, zooming)
-        });
-
-        track.addEventListener('touchmove', (e) => {
-            moveX = e.touches[0].clientX - startX; // Calculate the distance moved
+            startX = e.touches[0].clientX;
             e.preventDefault();
-        });
+        }, { passive: false });
+        
+        track.addEventListener('touchmove', (e) => {
+            moveX = e.touches[0].clientX - startX;
+            e.preventDefault();
+        }, { passive: false });
 
         track.addEventListener('touchend', (e) => {
             if (moveX > 50) { // Threshold for swipe action, adjust as needed
