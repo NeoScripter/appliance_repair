@@ -238,12 +238,26 @@ document.addEventListener("DOMContentLoaded", function() {
     const closeRequestPopUpForm = document.querySelectorAll('.webform-close-btn');
     repairRequestBtns.forEach(button => {
         button.addEventListener('click', () => {
-            document.querySelector('.webform-popup-overlay').style.display = 'flex';
+            document.querySelector('.webform-popup-overlay').classList.add('visible');
         })
     });
     closeRequestPopUpForm.forEach(button => {
         button.addEventListener('click', () => {
-            document.querySelector('.webform-popup-overlay').style.display = 'none';
+            document.querySelector('.webform-popup-overlay').classList.remove('visible');
         })
     });
+
+    const policyBtns = document.querySelectorAll('.policy-link');
+    const closePolicyBtn = document.querySelectorAll('.policy-close-btn');
+    policyBtns.forEach(button => {
+        button.addEventListener('click', () => {
+            document.querySelector('.policy-overlay').classList.add('visible');
+        })
+    });
+    closePolicyBtn.forEach(button => {
+        button.addEventListener('click', () => {
+            document.querySelector('.policy-overlay').classList.remove('visible');
+        })
+    });
+
 });
