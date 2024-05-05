@@ -914,13 +914,14 @@ input[type="tel"]:focus {
 .social-link-footer {
     display: block;
     border: 2px solid var(--dark-blue);
-    padding: 22px;
+    padding-block: 22px;
     text-align: center;
     font-size: var(--fs-700);
     color: var(--dark-blue);
     border-radius: 10px;
     font-weight: 500;
     text-decoration: none;
+    word-wrap: break-word;
 }
 
 .social-link-footer:hover, .social-link-footer:focus {
@@ -1042,6 +1043,10 @@ input[type="tel"]:focus {
     .stages-flex-group {
         flex-direction: column;
     }
+    .footer-flex-group {
+        flex-direction: column;
+        margin-block: 24px;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -1076,9 +1081,8 @@ input[type="tel"]:focus {
     .arrow-wrapper {
         position: static;
     }
-    .footer-flex-group {
-        flex-direction: column;
-        margin-block: 24px;
+    .social-link-footer {
+        font-size: var(--fs-600);
     }
 }
 
