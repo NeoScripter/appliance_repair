@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function moveToNextSlide() {
         if (currentSlide < items.length - 1) {
             currentSlide++;
-            moveTrack(itemWidth * currentSlide);
+            moveTrack((itemWidth + 24) * currentSlide);
         }
     }
 
@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function moveToPreviousSlide() {
         if (currentSlide > 0) {
             currentSlide--;
-            moveTrack(itemWidth * currentSlide);
+            moveTrack((itemWidth + 24) * currentSlide);
         }
     }
 
@@ -178,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Code that makes the sections gradually appear and disappear
+    // Hidable FAQ sections
 
     const faqQuestions = document.querySelectorAll('.faq-question');
 
