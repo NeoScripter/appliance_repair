@@ -88,59 +88,62 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Reviews carousel
-    const track = document.querySelector('.carousel-track');
-    const items = Array.from(track.children);
-    const nextButton = document.querySelector('.next-btn');
-    const prevButton = document.querySelector('.prev-btn');
-    const itemWidth = items[0].getBoundingClientRect().width;
-    let currentSlide = 0;
-    let startX; // Starting X position of touch
-    let moveX; // Distance moved during touch
+    const carouselViewport = document.querySelectorAll('.carousel-viewport');
+    carouselViewport.forEach((carouselContainer) => {
 
-    // Move the track
-    function moveTrack(position) {
-        track.style.transform = `translateX(-${position}px)`;
-    }
+        const track = carouselContainer.querySelector('.carousel-track');
+        const items = Array.from(track.children);
+        const btnContainer = carouselContainer.nextElementSibling;
+        const nextButton = btnContainer.querySelector('.next-btn');
+        const prevButton = btnContainer.querySelector('.prev-btn');
+        const itemWidth = items[0].getBoundingClientRect().width;
+        let currentSlide = 0;
+        let startX; // Starting X position of touch
+        let moveX; // Distance moved during touch
 
-    // Event handler for next slide
-    function moveToNextSlide() {
-        if (currentSlide < items.length - 1) {
-            currentSlide++;
-            moveTrack((itemWidth + 24) * currentSlide);
+        nextButton.addEventListener('click', moveToNextSlide);
+        prevButton.addEventListener('click', moveToPreviousSlide);
+
+        // Event handler for next slide
+        function moveToNextSlide() {
+            if (currentSlide < items.length - 1) {
+                currentSlide++;
+                moveTrack((itemWidth + 24) * currentSlide);
+            }
         }
-    }
 
-    // Event handler for previous slide
-    function moveToPreviousSlide() {
-        if (currentSlide > 0) {
-            currentSlide--;
-            moveTrack((itemWidth + 24) * currentSlide);
+        // Event handler for previous slide
+        function moveToPreviousSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                moveTrack((itemWidth + 24) * currentSlide);
+            }
         }
-    }
 
-    nextButton.addEventListener('click', moveToNextSlide);
-    prevButton.addEventListener('click', moveToPreviousSlide);
-
-    // Touch events
-    track.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].clientX; // Get the initial touch point
-        e.preventDefault(); // Prevent default behavior (scrolling, zooming)
-    });
-
-    track.addEventListener('touchmove', (e) => {
-        moveX = e.touches[0].clientX - startX; // Calculate the distance moved
-        e.preventDefault();
-    });
-
-    track.addEventListener('touchend', (e) => {
-        if (moveX > 50) { // Threshold for swipe action, adjust as needed
-            moveToPreviousSlide(); // Swiped right
-        } else if (moveX < -50) { // Threshold for swipe action, adjust as needed
-            moveToNextSlide(); // Swiped left
+        // Move the track
+        function moveTrack(position) {
+            track.style.transform = `translateX(-${position}px)`;
         }
-        e.preventDefault();
-    });
+        // Touch events
+        track.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX; // Get the initial touch point
+            e.preventDefault(); // Prevent default behavior (scrolling, zooming)
+        });
 
+        track.addEventListener('touchmove', (e) => {
+            moveX = e.touches[0].clientX - startX; // Calculate the distance moved
+            e.preventDefault();
+        });
+
+        track.addEventListener('touchend', (e) => {
+            if (moveX > 50) { // Threshold for swipe action, adjust as needed
+                moveToPreviousSlide(); // Swiped right
+            } else if (moveX < -50) { // Threshold for swipe action, adjust as needed
+                moveToNextSlide(); // Swiped left
+            }
+            e.preventDefault();
+        });
+    });
 
         
     // Arrow buttons hovering effect
