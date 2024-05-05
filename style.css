@@ -1031,6 +1031,19 @@ input[type="tel"]:focus {
     .webform {
         gap: 10px;
     }
+    .banner-h1, .services-h1 {
+        font-size: var(--fs-850);
+        line-height: 57.6px;
+    }
+    .our-services {
+        padding-top: 25px;
+    }
+    .services-title-wrapper {
+        margin-block: 16px;
+    }
+    section {
+        margin-bottom: 20px;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -1047,6 +1060,9 @@ input[type="tel"]:focus {
         flex-direction: column;
         margin-block: 24px;
     }
+    .eq-title {
+        font-size: var(--fs-700);
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -1057,8 +1073,8 @@ input[type="tel"]:focus {
         width: 100%;
     }
     .banner-h1, .services-h1 {
-        font-size: var(--fs-850);
-        line-height: 57.6px;
+        font-size: var(--fs-800);
+        line-height: 45.6px;
     }
     .services-title-prg {
         font-size: var(--fs-500);
