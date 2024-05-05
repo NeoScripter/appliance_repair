@@ -361,6 +361,7 @@ section {
     font-family: 'Actay Bold';
     font-size: var(--fs-800);
     color: var(--dark-blue);
+    text-transform: uppercase;
 }
 
 .eq-grid-group {
@@ -954,6 +955,50 @@ input[type="tel"]:focus {
     font-size: var(--fs-700);
     max-width: 960px;
     margin-left: auto;
+}
+
+.services-gallery {
+    margin-block: 32px;
+}
+
+.services-gallery .flex-item {
+    display: flex;
+    padding-block: 40px;
+    gap: 40px;
+    border-bottom: 2px solid var(--dark-blue);
+}
+
+.flex-item.img-right {
+    justify-content: space-between;
+}
+
+.services-gallery .appliance-img {
+    max-width: 480px;
+    border-radius: 10px;
+
+}
+
+.service-list {
+    font-size: var(--fs-600);
+    margin-block: 20px;
+}
+
+.service-list-item {
+    margin-top: 16px;
+    padding-left: 1.5em;
+    background-image: url(assets/svgs/+orange.svg);
+    background-repeat: no-repeat;
+    background-size: 16px;
+    background-position: 0% 50%;
+    list-style: none;
+}
+
+.h3-services {
+    font-family: 'Actay Bold';
+    font-size: var(--fs-700);
+    color: var(--dark-blue);
+    text-transform: uppercase;
+    margin-bottom: 20px;
 }
 
 @media screen and (max-width: 1440px) {
