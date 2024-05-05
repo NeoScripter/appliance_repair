@@ -238,12 +238,12 @@ document.addEventListener("DOMContentLoaded", function() {
     const closeRequestPopUpForm = document.querySelectorAll('.webform-close-btn');
     repairRequestBtns.forEach(button => {
         button.addEventListener('click', () => {
-            document.querySelector('.webform-popup-overlay').classList.add('visible');
+            document.querySelector('.webform-popup-overlay').classList.add('visible-pop-up');
         })
     });
     closeRequestPopUpForm.forEach(button => {
         button.addEventListener('click', () => {
-            document.querySelector('.webform-popup-overlay').classList.remove('visible');
+            document.querySelector('.webform-popup-overlay').classList.remove('visible-pop-up');
         })
     });
 
