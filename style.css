@@ -62,10 +62,13 @@ section {
     gap: 80px;
     position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
     background-color: var(--white);
     z-index: 300;
-    width: min(1588px, calc(100% - 24px));
-    padding-block: 12px;
+    width: min(1588px, 100%);
+    padding: 12px;
     box-shadow: 0 2px 2px rgb(128, 128, 128, 0.3);
 }
 
